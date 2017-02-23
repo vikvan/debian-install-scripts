@@ -75,6 +75,7 @@ testdisk
 thunar
 udisks2
 valgrind
+vim-runtime
 vlc
 x11-xserver-utils
 xfonts-base
