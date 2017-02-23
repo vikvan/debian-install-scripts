@@ -93,26 +93,26 @@ update-command-not-found
 
 apt-get install -y lightdm
 
-git clone https://github.com/vikvan/dwm-6.1.git
+git clone --depth 1 https://github.com/vikvan/dwm-6.1.git
 cd dwm*/
 make -j
 make install
 cd ../
 
-git clone https://github.com/vikvan/dmenu-4.6.git
+git clone --depth 1 https://github.com/vikvan/dmenu-4.6.git
 cd dmenu*/
 make -j
 make install
 cd ../
 
-git clone https://github.com/hishamhm/htop.git
+git clone --depth 1 https://github.com/hishamhm/htop.git
 cd htop*/
 ./autogen.sh && ./configure && make
 make -j
 make install
 cd ../
 
-git clone https://github.com/vim/vim.git
+git clone --depth 1 https://github.com/vim/vim.git
 cd vim*/
 ./configure --with-features=huge --enable-multibyte --enable-rubyinterp --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu/ --enable-perlinterp --enable-luainterp --enable-gui=gtk2 --enable-cscope --prefix=/usr
 make -j VIMRUNTIMEDIR=/usr/share/vim/vim74
