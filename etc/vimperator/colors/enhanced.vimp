@@ -1,0 +1,41 @@
+" ==VimperatorColorSchema==
+" name: ehanced
+" ==/VimperatorColorSchema==
+
+" red   : #e84838
+" green : #35a555
+" blue  : #4989f9
+" yellow: #fcbc0c
+" orange: #ee9922
+" black : #0a0a0a
+" white : #eaeaea
+" dark  : #808080
+" light : #d0d0d0
+
+hi Hint font-family: monospace; font-size: 10pt; font-weight: bold; color: #eaeaea; background-color: #e84838; border-radius: 3px; padding: 0px 5px 0px 5px; text-transform: uppercase;
+hi HintElem background-color: #fcbc0c; color: #0a0a0a; border-radius: 3px;
+hi HintActive background-color: #35a555; color: #0a0a0a; border-radius: 3px;
+
+hi StatusLine     color: #0a0a0a; background: #eaeaea; font-weight: normal; font-size: 10pt;
+
+hi Normal     color:  #0a0a0a;  background: #eaeaea; font-size: 10pt; opacity: 0.9;
+hi CmdLine    color:  #0a0a0a;  background: #eaeaea; font-size: 10pt;
+hi InfoMsg    color:  #0a0a0a;  background: #eaeaea; font-size: 10pt;
+hi ModeMsg    color:  #0a0a0a;  background: #eaeaea; font-size: 10pt;
+hi MoreMsg    color:  #009900; background: #eaeaea;
+hi LineNr   color:  #35a555; background: #eaeaea; font-size: 10pt;
+hi Question   color: #0a0a0a;  background: #35a555;  font-size: 10pt;
+hi WarningMsg   color: #0a0a0a;  background: #ee9922;  font-size: 10pt;
+hi ErrorMsg   color: #eaeaea;  background: #e84838;  font-size: 10pt;
+hi NonText    background: #808080;
+hi Null     color: CornflowerBlue;
+hi Tag      color: CornflowerBlue;
+hi Number   color: CornflowerBlue;
+
+hi PromptText color: #0a0a0a; background: #35a555;
+hi Title color: #0a0a0a; background: #fcbc0c; font-weight: bold;
+
+hi CompTitle    background: #4989f9;
+hi CompTitle>*  color: #eaeaea; padding: 1px 0.5ex;
+hi CompItem[selected] color: #0a0a0a;  background: #fcbc0c;
+hi CompDesc   color: #0a0a0a;

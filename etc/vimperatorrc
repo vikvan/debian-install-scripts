@@ -1,0 +1,6 @@
+set hintchars="asdfghjkl;"
+"set noscrollbars
+set gui=none,tabs
+nmap <C-a> :set toolbars=invnavigation<Cr>
+set tabnumbers
+colorscheme enhanced

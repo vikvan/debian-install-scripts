@@ -1,0 +1,83 @@
+"---------- Path ------------
+"let $PATH = $PATH . ':' . expand('~/.cabal/bin') "ghcmod-vim
+
+"---------- Vundle ----------
+set nocompatible                        "vundle
+filetype off                            "vundle
+
+set rtp+=~/.vim/bundle/Vundle.vim       "vundle
+call vundle#begin()                     "vundle
+
+Plugin 'gmarik/Vundle.vim'              "vundle
+
+Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'flazz/vim-colorschemes'
+
+"Plugin 'xolox/vim-misc'
+
+"Plugin 'xolox/vim-colorscheme-switcher'
+
+Plugin 'jaxbot/semantic-highlight.vim'
+
+"Plugin 'Shougo/vimproc.vim'
+
+"Plugin 'eagletmt/ghcmod-vim'
+
+"Plugin 'eagletmt/neco-ghc'
+
+call vundle#end()                       "vundle
+
+filetype plugin indent on               "vundle
+
+"---------- general settings ----------
+set nu
+set rnu
+set nowrap
+
+"---------- color settings ----------
+syntax on
+set background=dark
+colorscheme solarized
+
+"---------- tab settings ----------
+set expandtab
+set smarttab
+set tabstop=4
+set shiftwidth=4
+
+"---------- indent settings ----------
+set cindent
+set ai
+
+"---------- search settings ----------
+set incsearch
+set ignorecase
+set smartcase
+
+"---------- folding settings ----------
+"set foldmethod=syntax
+"nmap <space> za
+set nofoldenable
+
+"---------- gui settings ----------
+if has('gui_running')
+    set guifont=Monospace\ 13 
+    set guioptions="c"
+endif
+
+"---------- plugins settings ----------
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+let g:ycm_error_symbol = 'e>'
+let g:ycm_warning_symbol = 'w>'
+let g:ycm_complete_in_comments = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_goto_buffer_command = 'new-or-existing-tab'
+
+"let g:ycm_semantic_triggers = {'haskell' : ['.']}
+
+"---------- other settings ----------
+autocmd FileType c,cpp,h,hpp,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+
