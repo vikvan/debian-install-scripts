@@ -18,15 +18,12 @@ doxygen-doc
 dvd+rw-tools
 exuberant-ctags
 feh
-firefox
 fonts-dejavu
 fonts-droid
 fonts-liberation
 g++
 gcc
-gcc-doc
 gdb
-gdb-doc
 gimp
 git
 git-doc
@@ -34,6 +31,7 @@ gpart
 gparted
 gvfs-backends
 html-xml-utils
+iceweasel
 imagemagick
 iotop
 libatk1.0-dev
@@ -54,7 +52,6 @@ libxml2-utils
 libxpm-dev
 libxt-dev
 make
-make-doc
 mesa-utils
 mupdf
 mupdf-tools
