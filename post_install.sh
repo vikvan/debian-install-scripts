@@ -53,6 +53,8 @@ cd ~/.vim/bundle/YouCompleteMe
 
 cd -
 
+sudo apt-get install -y network-manager
+
 #Configure GRUB
 sudo cp ./etc/grub /etc/default/grub
 sudo vim /etc/default/grub

@@ -128,5 +128,3 @@ update-alternatives --install /usr/bin/dmenu_run dmenu_run /usr/local/bin/dmenu_
 update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/urxvt 200
 update-alternatives --install /usr/bin/editor editor /usr/bin/vim 200
 update-alternatives --install /usr/bin/vi vi /usr/bin/vim 200
-
-apt-get install -y network-manager
