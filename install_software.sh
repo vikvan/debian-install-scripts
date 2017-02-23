@@ -119,6 +119,15 @@ make -j VIMRUNTIMEDIR=/usr/share/vim/vim74
 make install
 cd ..
 
+git clone https://github.com/vikvan/Xdefaults-urxvt.git
+cp Xdefaults-urxvt/Xdefaults ~/.Xdefaults
+rm -rf Xdefaults-urxvt
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
+
 rm -rf dmenu*/ dwm*/ htop*/ vim*/
 cd ..
 

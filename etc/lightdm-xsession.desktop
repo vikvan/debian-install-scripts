@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=6.1
+Name=dwm
+Exec=/usr/bin/dwm
+Icon=
+Type=Application

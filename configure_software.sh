@@ -22,12 +22,3 @@ cp vimrc ~/.vimrc
 cp xsessionrc ~/.xsessionrc
 cp ycm_extra_conf.py ~/.ycm_extra_conf.py
 cp -r zathura/ ~/.config/zathura
-
-git clone https://github.com/vikvan/Xdefaults-urxvt.git
-cp Xdefaults-urxvt/Xdefaults ~/.Xdefaults
-rm -rf Xdefaults-urxvt
-
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer
