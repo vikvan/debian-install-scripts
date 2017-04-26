@@ -70,7 +70,7 @@ python-doc
 ranger
 renameutils
 ruby-dev
-rxvt-unicode
+rxvt-unicode-256color
 screen
 sshfs
 tcpdump
