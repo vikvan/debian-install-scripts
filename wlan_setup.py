@@ -43,7 +43,7 @@ def get_available_interfaces():
 
 def get_available_access_points(iface):
     iwlist_output = check_output(['iwlist', iface, 'scan'])
-    return grep_call_output(iwlist_output, r'(?<=ESSID:")\w+')
+    return grep_call_output(iwlist_output, r'(?<=ESSID:")[^"]+')
         
 
 def write_config_file(file, iface, ap, psk):
