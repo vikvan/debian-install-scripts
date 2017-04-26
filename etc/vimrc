@@ -1,34 +1,37 @@
-"---------- Path ------------
-"let $PATH = $PATH . ':' . expand('~/.cabal/bin') "ghcmod-vim
-
 "---------- Vundle ----------
-set nocompatible                        "vundle
-filetype off                            "vundle
+set nocompatible
+filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim       "vundle
-call vundle#begin()                     "vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'              "vundle
+Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'flazz/vim-colorschemes'
 
-"Plugin 'xolox/vim-misc'
-
-"Plugin 'xolox/vim-colorscheme-switcher'
-
 Plugin 'jaxbot/semantic-highlight.vim'
 
-"Plugin 'Shougo/vimproc.vim'
+Plugin 'easymotion/vim-easymotion'
 
-"Plugin 'eagletmt/ghcmod-vim'
+Plugin 'vim-airline/vim-airline'
 
-"Plugin 'eagletmt/neco-ghc'
+Plugin 'vim-airline/vim-airline-themes'
 
-call vundle#end()                       "vundle
+Plugin 'scrooloose/nerdtree'
 
-filetype plugin indent on               "vundle
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'airblade/vim-gitgutter'
+
+call vundle#end()
+
+filetype plugin indent on
 
 "---------- general settings ----------
 set nu
@@ -39,6 +42,8 @@ set nowrap
 syntax on
 set background=dark
 colorscheme solarized
+set cursorline
+let &colorcolumn=join(range(81,9999),",")
 
 "---------- tab settings ----------
 set expandtab
@@ -55,19 +60,14 @@ set incsearch
 set ignorecase
 set smartcase
 
-"---------- folding settings ----------
-"set foldmethod=syntax
-"nmap <space> za
-set nofoldenable
-
 "---------- gui settings ----------
 if has('gui_running')
-    set guifont=Monospace\ 13 
+    set guifont=Monospace\ 24 
     set guioptions="c"
 endif
 
-"---------- plugins settings ----------
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+"---------- youcompleteme -------------
+nnoremap <F9> :YcmForceCompileAndDiagnostics<CR>
 let g:ycm_error_symbol = 'e>'
 let g:ycm_warning_symbol = 'w>'
 let g:ycm_complete_in_comments = 1
@@ -76,8 +76,47 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_goto_buffer_command = 'new-or-existing-tab'
 
-"let g:ycm_semantic_triggers = {'haskell' : ['.']}
+"--------- easymotion -----------------
+let mapleader = ' '
+map <Leader> <Plug>(easymotion-prefix)
+nmap s <Plug>(easymotion-overwin-f2)
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map n <Plug>(easymotion-next)
+map N <Plug>(easymotion-prev)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+let g:EasyMotion_smartcase = 1
+
+"-------- vim-airline ------------------
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+
+"-------- nerdtree ---------------------
+nmap <F3> :NERDTreeToggle<CR>
+
+"-------- nerdtree-git-plugin ----------
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "★",
+    \ "Renamed"   : "→",
+    \ "Unmerged"  : "−",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✓",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+"-------- gitgutter --------------------
+nmap <F4> :GitGutterToggle<CR>
+nmap [c <Plug>GitGutterPrevHunk
+nmap ]c <Plug>GitGutterNextHunk
 
 "---------- other settings ----------
 autocmd FileType c,cpp,h,hpp,java autocmd BufWritePre <buffer> :%s/\s\+$//e
-
+set scrolloff=5
+set nofoldenable
