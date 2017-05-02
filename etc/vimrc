@@ -25,9 +25,17 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'airblade/vim-gitgutter'
+
+Plugin 'xolox/vim-misc'
+
+Plugin 'xolox/vim-easytags'
+
+Plugin 'majutsushi/tagbar'
+
+Plugin 'tpope/vim-commentary'
 
 call vundle#end()
 
@@ -59,6 +67,9 @@ set ai
 set incsearch
 set ignorecase
 set smartcase
+
+"---------- folding settings ----------
+set nofoldenable
 
 "---------- gui settings ----------
 if has('gui_running')
@@ -111,12 +122,19 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
+"-------- ctrlp ------------------------
+nmap <C-K> :UpdateTags<CR>:CtrlPTag<CR>
+
 "-------- gitgutter --------------------
 nmap <F4> :GitGutterToggle<CR>
 nmap [c <Plug>GitGutterPrevHunk
 nmap ]c <Plug>GitGutterNextHunk
 
+"-------- tagbar -----------------------
+nmap <F2> :TagbarToggle<CR>
+
+"-------- easytags ---------------------
+let g:easytags_include_members = 1
+
 "---------- other settings ----------
-autocmd FileType c,cpp,h,hpp,java autocmd BufWritePre <buffer> :%s/\s\+$//e
 set scrolloff=5
-set nofoldenable
